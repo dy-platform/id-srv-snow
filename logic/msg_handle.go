@@ -1,7 +1,7 @@
 package logic
 
 import (
-	snowflake "github.com/dy-platform/id-srv-snowflake/idl/platform/id-srv-snowflake"
+	snowflake "github.com/dy-platform/id-srv-snowflake/idl/platform/id/srv-snowflake"
 	"github.com/micro/go-config"
 	"context"
 	"time"

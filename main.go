@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/dy-gopkg/kit"
 	"github.com/dy-platform/id-srv-snowflake/logic"
-	"github.com/dy-platform/id-srv-snowflake/idl/platform/id-srv-snowflake"
+	"github.com/dy-platform/id-srv-snowflake/idl/platform/id/srv-snowflake"
 )
 
 
