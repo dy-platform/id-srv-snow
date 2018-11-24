@@ -1,9 +1,9 @@
 package logic
 
 import (
-	"github.com/dy-platform/id-srv-snow/proto"
+	snowflake "github.com/dy-platform/id-srv-snowflake/idl/platform/id-srv-snowflake"
 	"github.com/micro/go-config"
-	"golang.org/x/net/context"
+	"context"
 	"time"
 )
 
@@ -98,7 +98,7 @@ type Handle struct{}
 
 
 
-func (h *Handle)GetId(ctx context.Context, req *platform_id_srv_snow.GetIdReq, resp *platform_id_srv_snow.GetIdResp)error {
+func (h *Handle)GetId(ctx context.Context, req *snowflake.GetIdReq, resp *snowflake.GetIdResp)error {
 
 	for i := int64(0); i < req.Num; i++{
 		id := globalSnow.GetSnowflakeId()

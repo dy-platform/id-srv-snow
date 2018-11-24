@@ -1,5 +1,5 @@
 # This is how we want to name the binary output
-OUTPUT=id-srv-snow
+OUTPUT=id-srv-snowflake
 
 # These are the values we want to pass for Version and BuildTime
 GITTAG=`git describe --tags`
@@ -9,14 +9,21 @@ BUILD_TIME=`date +%FT%T%z`
 # LDFLAGS=-ldflags "-X main.GitTag=${GITTAG} -X main.BuildTime=${BUILD_TIME}"
 LDFLAGS=-ldflags "-X main.BuildTime=${BUILD_TIME}"
 
+exclude_dirs := Makefile
+
+dirs := $(shell ls -l | grep '^d' |awk '{print $$9}')
+
+
+.PHONY:all clean proto release
 all:clean proto release
 
 clean:
 	rm -f ${OUTPUT}
 
-.PHONY:proto
-proto: $(wildcard proto/*.proto)
-	make -C proto
+proto:
+	make -C idl
 
 release:
 	go build ${LDFLAGS} -o ${OUTPUT} main.go
+
+
