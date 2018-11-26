@@ -98,11 +98,11 @@ type Handle struct{}
 
 
 
-func (h *Handle)GetId(ctx context.Context, req *snowflake.GetIdReq, resp *snowflake.GetIdResp)error {
+func (h *Handle) GetID(ctx context.Context, req *snowflake.GetIDReq, resp *snowflake.GetIDResp)error {
 
 	for i := int64(0); i < req.Num; i++{
 		id := globalSnow.GetSnowflakeId()
-		resp.Ids = append(resp.Ids, id)
+		resp.IDs = append(resp.IDs, id)
 	}
 
 	return nil

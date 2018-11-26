@@ -1,0 +1,2 @@
+depends:
+  - "platform/id/srv-snowflake/snowflake.proto"
