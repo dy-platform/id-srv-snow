@@ -12,4 +12,7 @@
 *.out
 .idea
 go.sum
+<<<<<<< HEAD
 vendor
+=======
+>>>>>>> d6cf08cf9dc77e4f660e1e486298161c5cebeb76
