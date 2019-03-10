@@ -1,4 +1,4 @@
-package logic
+package handler
 
 import (
 	snowflake "github.com/dy-platform/id-srv-snowflake/idl/platform/id/srv-snowflake"

@@ -10,12 +10,16 @@ BUILD_TIME=`date +%FT%T%z`
 LDFLAGS=-ldflags "-X main.BuildTime=${BUILD_TIME}"
 
 .PHONY:all clean release
-all:clean release
+
+release:
+	rm -f ${OUTPUT} && CGO_ENABLED=0 go build ${LDFLAGS} -o ${OUTPUT} main.go
 
 clean:
 	rm -f ${OUTPUT}
 
-release:
-	go build ${LDFLAGS} -o ${OUTPUT} main.go
+docker:
+	docker build --build-arg CONFIG_HOST=$CONFIG_HOST -t platform-${OUTPUT}:latest
+
+
 
 
