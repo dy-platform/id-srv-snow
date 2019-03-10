@@ -1,9 +1,8 @@
 registry:
-  address: $REGISTRY_CENTER
+  address: $REGISTRY_HOST
 
 service:
-  address: 127.0.0.1:9999
-  name: id-srv-snowflake
+  name: platform.id.srv.snowflake
   version: v1.0.0
   metadata:
     id: "1"
